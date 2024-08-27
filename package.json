@@ -1,0 +1,24 @@
+{
+  "name": "gamesellingproject",
+  "version": "1.0.0",
+  "description": "Game selling site, that has the objective to facilitate game buying.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "game",
+    "sellling",
+    "sales"
+  ],
+  "author": "Marcelo Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "gamesellingproject": "file:",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.0.0"
+  }
+}
