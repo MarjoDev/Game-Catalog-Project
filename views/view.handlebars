@@ -1,0 +1,40 @@
+<div id="game-view-container" class="container">
+  <div class="row text-center">
+    <a class="back-link main-color" href="/">Go back</a>
+    <div id="img-container" class="col-md-12">
+      <img src="/img/game-logo.svg" alt="Game logo">
+    </div>
+    <div class="col-md-12">
+      <h1 class="main-color">{{game.dataValues.title}}</h1>
+      <p class="bold">The description of the game is:</p>
+      <p class="game-desc">{{game.dataValues.description}}</p>
+      <p><span class="bold">The price of the game is:</span> ${{game.dataValues.price}}</p>
+      <p>
+        The game publisher is <span class="bold main-color">{{game.dataValues.publisher}}</a>
+      </p>
+      <button type="button" id="delete-button" class="btn btn-danger">Delete Game</button
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('delete-button').addEventListener('click', function() {
+    const gameId = {{game.dataValues.id}};
+    const confirmDelete = confirm("Are you sure you want to delete this game?");
+    
+    if (confirmDelete) {
+      fetch(`/games/${gameId}`, {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Game deleted successfully.');
+          window.location.href = '/';
+        } else {
+          alert('Failed to delete the game.');
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  });
+</script>

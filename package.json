@@ -1,15 +1,15 @@
 {
-  "name": "gamesellingproject",
+  "name": "game-catalog-project",
   "version": "1.0.0",
-  "description": "Game selling site, that has the objective to facilitate game buying.",
+  "description": "Game catalog site, that has the objective to facilitate game searching.",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js"
   },
   "keywords": [
     "game",
-    "sellling",
-    "sales"
+    "catalog",
+    "searching"
   ],
   "author": "Marcelo Pereira",
   "license": "ISC",
@@ -17,7 +17,7 @@
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "express-handlebars": "^8.0.1",
-    "gamesellingproject": "file:",
+    "game-catalog-project": "file:",
     "nodemon": "^3.1.4",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.0.0"

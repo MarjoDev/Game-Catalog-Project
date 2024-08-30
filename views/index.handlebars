@@ -1,0 +1,37 @@
+<div id="top-container" class="container-fluid">
+  <h1 id="main-title" class="text-center">Find the best games</h1>
+  <p id="main-subtitle" class="text-center">The ultimate catalog for discovering your next favorite game.</p>
+  <form id="search-form" class="form-inline" action="/" method="GET">
+    <div class="form-group col-md-10">
+      <input type="text" class="form-control" id="game" name="game" placeholder="Insert the game you're looking for">
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+</div>
+<main>
+  <div id="games-container" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{#if search}}
+          <h2 id="game-list-title">Searching games that matches: {{search}}</h2>
+        {{else}}
+          <h2 id="game-list-title">See games that are in the spotlight</h2>
+        {{/if}}
+        <ul id="game-list" class="list-group">
+          {{#each games}}
+            <li class="list-group-item {{#if dataValues.new_game }}new-game{{/if}}">
+              <img src="/img/game-logo.svg" alt="Game logo">
+              <p>{{dataValues.company}}</p>
+              <h2>{{dataValues.title}}</h2>
+              <p>${{dataValues.price}}</p>
+              <span class="new-game-label">New</span>
+              <a class="btn btn-primary" href="/games/view/{{dataValues.id}}">See game</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
